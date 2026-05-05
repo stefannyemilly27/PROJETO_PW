@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffeaf4, #eaf3ff); /* rosa + azul pastel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* caixa principal */
+.box {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(180, 180, 255, 0.15);
+    border: 1px solid #f0f0ff;
+    position: relative;
+}
+
+/* detalhe roxinho suave embaixo */
+.box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #e6ddff; /* roxo pastel */
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* título */
+h1 {
+    color: #a59cf5; /* roxo clarinho */
+    margin-bottom: 18px;
+}
+
+/* inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ececff;
+    background: #fafaff;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #dcd4ff;
+}
+
+/* botão */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #dfe7ff; /* azul pastel */
+    color: #555;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #d6ccff; /* roxo pastel leve */
+}
+
+/* links */
+a {
+    color: #a59cf5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* mensagens */
+.erro {
+    color: #ff9aa2;
+    font-size: 14px;
+}
+
+.sucesso {
+    color: #a0e7e5;
+    font-size: 14px;
+}
