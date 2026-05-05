@@ -1,5 +1,29 @@
 <?php 
 require 'conexao.php';
+
+if (isset($_POST['email']) && isset($_POST['senha'])) {
+
+    if (strlen($_POST['email']) == 0) {
+        echo "Adicione seu email";
+    } else if (strlen($_POST['senha']) == 0) {
+        echo "Adicione sua senha";
+    } else {
+
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+
+        $user = $stmt->fetch();
+
+        if ($user && password_verify($senha, $user['senha'])) {
+            echo "Login OK!";
+        } else {
+            echo "usuário ou senha, incorreto!";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
