@@ -6,8 +6,10 @@ $sucesso = "";
 
 if (isset($_POST['email'], $_POST['senha'])) {
 
-    if (strlen($_POST['email']) == 0) {
-        $erro = "Preencha o email";
+    if (strlen($_POST['email']) == 0 && strlen($_POST['senha']) == 0) {
+        $erro = "Preencha o E-mail e a senha";
+    } else if (strlen($_POST['email']) == 0) {
+    $erro = "Preencha o E-mail";
     } else if (strlen($_POST['senha']) == 0) {
         $erro = "Preencha a senha";
     } else {
@@ -15,7 +17,7 @@ if (isset($_POST['email'], $_POST['senha'])) {
         $email = $_POST['email'];
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-        // Verifica se já existe
+
         $stmt = $conexao->prepare("SELECT id FROM usuarios_login WHERE email = ?");
         $stmt->execute([$email]);
 
@@ -33,6 +35,14 @@ if (isset($_POST['email'], $_POST['senha'])) {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
 <div class="box">
@@ -59,3 +69,4 @@ if (isset($_POST['email'], $_POST['senha'])) {
 </div>
 
 </body>
+</html>

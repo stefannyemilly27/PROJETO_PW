@@ -6,11 +6,14 @@ $erro = "";
 
 if (isset($_POST['email']) && isset($_POST['senha'])) {
 
-    if (strlen($_POST['email']) == 0) {
+    if (strlen($_POST['email']) == 0 && strlen($_POST['senha']) == 0){
+        $erro = "Adicione seu E-mail e senha";
+    } else if (strlen($_POST['email']) == 0){
         $erro = "Adicione seu E-mail";
-    } else if (strlen($_POST['senha']) == 0) {
+    } else if (strlen($_POST['senha']) == 0){
         $erro = "Adicione sua senha";
-    } else {
+    }
+     else {
 
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -23,9 +26,9 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
         if ($user && password_verify($senha, $user['senha'])) {
             
             $_SESSION['user'] = $user['email'];
-            header("Location: dashboard.php");
+            header("Location: home-adm.php");
             exit;
-
+            
         } else {
             $erro = "E-mail ou senha incorretos!";
         }
