@@ -20,7 +20,7 @@ services:
     restart: always
 
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
       MYSQL_DATABASE: projeto_pw_blog
 
     ports:
@@ -37,7 +37,7 @@ services:
 
     environment:
       PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: root
+
 
     depends_on:
       - mysql
