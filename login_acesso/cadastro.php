@@ -57,6 +57,8 @@ if (isset($_POST['email'], $_POST['senha'])) {
         <input type="email" name="email" placeholder="Email" required>
 
         <input type="password" name="senha" placeholder="Senha" required>
+        
+        <input type="tex" name="tipo" placeholder="tipo de usuário" required>
 
         <button type="submit">Cadastrar</button>
 
