@@ -4,32 +4,72 @@ require 'conexao.php';
 $erro = "";
 $sucesso = "";
 
-if (isset($_POST['email'], $_POST['senha'])) {
+if (isset($_POST['email'], $_POST['senha'], $_POST['tipo'])) {
 
-    if (strlen($_POST['email']) == 0 && strlen($_POST['senha']) == 0) {
+    if (
+        strlen($_POST['email']) == 0 &&
+        strlen($_POST['senha']) == 0
+    ) {
+
         $erro = "Preencha o E-mail e a senha";
+
     } else if (strlen($_POST['email']) == 0) {
-    $erro = "Preencha o E-mail";
+
+        $erro = "Preencha o E-mail";
+
     } else if (strlen($_POST['senha']) == 0) {
+
         $erro = "Preencha a senha";
+
+    } else if (strlen($_POST['tipo']) == 0) {
+
+        $erro = "Preencha o tipo de usuário";
+
     } else {
 
-        $email = $_POST['email'];
+        $email = trim($_POST['email']);
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
+        $tipo = strtolower(trim($_POST['tipo']));
 
-        $stmt = $conexao->prepare("SELECT id FROM usuarios_login WHERE email = ?");
-        $stmt->execute([$email]);
+        if (
+            $tipo != 'admin' &&
+            $tipo != 'usuário'
+        ) {
 
-        if ($stmt->fetch()) {
-            $erro = "Email já cadastrado!";
+            $erro = "Digite apenas: admin ou usuário";
+
         } else {
 
-            $sql = "INSERT INTO usuarios_login (email, senha) VALUES (?, ?)";
-            $stmt = $conexao->prepare($sql);
-            $stmt->execute([$email, $senha]);
+            $stmt = $conexao->prepare(
+                "SELECT id FROM usuarios_login WHERE email = ?"
+            );
 
-            $sucesso = "Cadastro realizado com sucesso!";
+            $stmt->execute([$email]);
+
+            if ($stmt->fetch()) {
+
+                $erro = "Este E-mail já está cadastrado!";
+
+            } else {
+
+                $sql = "
+                    INSERT INTO usuarios_login
+                    (email, senha, tipo)
+                    VALUES
+                    (?, ?, ?)
+                ";
+
+                $stmt = $conexao->prepare($sql);
+
+                $stmt->execute([
+                    $email,
+                    $senha,
+                    $tipo
+                ]);
+
+                $sucesso = "Cadastro realizado com sucesso!";
+            }
         }
     }
 }
@@ -38,10 +78,13 @@ if (isset($_POST['email'], $_POST['senha'])) {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadastro</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -49,23 +92,54 @@ if (isset($_POST['email'], $_POST['senha'])) {
 
     <h1>Cadastro</h1>
 
-    <?php if (!empty($erro)) echo "<p class='erro'>$erro</p>"; ?>
-    <?php if (!empty($sucesso)) echo "<p class='sucesso'>$sucesso</p>"; ?>
+    <?php
+        if (!empty($erro)) {
+            echo "<p class='erro'>$erro</p>";
+        }
+
+        if (!empty($sucesso)) {
+            echo "<p class='sucesso'>$sucesso</p>";
+        }
+    ?>
 
     <form method="POST">
 
-        <input type="email" name="email" placeholder="Email" required>
+        <input
+            type="email"
+            name="email"
+            placeholder="Digite seu E-mail"
+            required
+        >
 
-        <input type="password" name="senha" placeholder="Senha" required>
-        
-        <input type="tex" name="tipo" placeholder="tipo de usuário" required>
+        <input
+            type="password"
+            name="senha"
+            placeholder="Digite sua senha"
+            required
+        >
 
-        <button type="submit">Cadastrar</button>
+        <input
+            type="text"
+            name="tipo"
+            placeholder="Digite: admin ou usuário"
+            class="tipo-input"
+            required
+        >
+
+        <button type="submit">
+            Cadastrar
+        </button>
 
     </form>
 
     <p class="link">
-        Já tem conta? <a href="index.php">Fazer login</a>
+
+        Já possui conta?
+
+        <a href="index.php">
+            Fazer login
+        </a>
+
     </p>
 
 </div>

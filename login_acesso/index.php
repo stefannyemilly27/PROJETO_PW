@@ -6,7 +6,10 @@ $erro = "";
 
 if (isset($_POST['email']) && isset($_POST['senha'])) {
 
-    if (strlen($_POST['email']) == 0 && strlen($_POST['senha']) == 0) {
+    if (
+        strlen($_POST['email']) == 0 &&
+        strlen($_POST['senha']) == 0
+    ) {
 
         $erro = "Adicione seu E-mail e senha";
 
@@ -20,8 +23,8 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 
     } else {
 
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+        $email =trim($_POST['email']);
+        $senha = trim($_POST['senha']);
 
         $stmt = $conexao->prepare(
             "SELECT * FROM usuarios_login WHERE email = ?"
@@ -43,8 +46,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 
             } else {
 
-                header("Location: home-comum.php");
-
+                header("Location: blog/home-comum.php");
             }
 
             exit;
@@ -77,8 +79,6 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
         <input type="email" name="email" placeholder="Email" required>
 
         <input type="password" name="senha" placeholder="Senha" required>
-
-        <input type="text" name="tipo" placeholder="tipo de usuário" required>
 
         <button type="submit">Entrar</button>
 

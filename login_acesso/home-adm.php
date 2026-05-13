@@ -7,9 +7,12 @@ if (!isset($_SESSION['email'])) {
     exit;
 }
 
-if ($_SESSION['tipo'] != 'admin') {
+if (
+    !isset($_SESSION['tipo']) ||
+    $_SESSION['tipo'] !== 'admin'
+) {
 
-    header("Location: home-comum.php");
+    header("Location: blog/home-comum.php");
     exit;
 }
 ?>
@@ -18,25 +21,28 @@ if ($_SESSION['tipo'] != 'admin') {
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Home ADM</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="box">
 
-    <h1>Home adm</h1>
+    <h1>Painel do Administrador</h1>
 
-    <p>Bem-vindo(a), <?php echo $_SESSION['email']; ?></p>
+    <p>
+        Bem-vindo(a),
+        <?php echo $_SESSION['email']; ?>
+    </p>
 
     <hr>
 
-    <h2>Gerenciamento</h2>
+    <h2>Gerenciamento do Blog</h2>
 
-    <ul>
-        <li><a href="#">Gerenciar Posts</a></li>
-        <li><a href="#">Gerenciar Categorias</a></li>
-        <li><a href="#">Gerenciar Comentários</a></li>
+    <ul class="menu-admin">
+        <li><a href="posts/index.php">Gerenciar Posts</a></li>
+        <li><a href="categorias/index.php">Gerenciar Categorias</a></li>
+        <li><a href="comentários/index.php">Gerenciar Comentários</a></li>
     </ul>
 
     <hr>

@@ -12,7 +12,7 @@ CREATE TABLE usuarios_login (
 
     senha VARCHAR(255) NOT NULL,
 
-    tipo VARCHAR(20) NOT NULL DEFAULT 'usuario'
+    tipo VARCHAR(20) NOT NULL DEFAULT 'usuário'
 
 );
 

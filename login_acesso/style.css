@@ -1,13 +1,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffeaf4, #eaf3ff); 
+    background: linear-gradient(135deg, #ffeaf4, #eaf3ff);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 
 .box {
     background: #ffffff;
@@ -19,7 +18,6 @@ body {
     border: 1px solid #f0f0ff;
     position: relative;
 }
-
 
 .box::after {
     content: "";
@@ -33,12 +31,10 @@ body {
     border-bottom-right-radius: 16px;
 }
 
-
 h1 {
     color: #a59cf5;
     margin-bottom: 18px;
 }
-
 
 input {
     width: 100%;
@@ -49,12 +45,17 @@ input {
     background: #fafaff;
     outline: none;
     transition: 0.2s;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 input:focus {
     border-color: #dcd4ff;
 }
 
+.tipo-input {
+    margin-bottom: 20px;
+}
 
 button {
     width: 100%;
@@ -72,7 +73,6 @@ button:hover {
     background: #d6ccff;
 }
 
-
 a {
     color: #a59cf5;
     text-decoration: none;
@@ -83,14 +83,42 @@ a:hover {
     text-decoration: underline;
 }
 
-
 .erro {
     color: #ff9aa2;
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 
 .sucesso {
-    color: #a0e7e5;
+    color: #7fd6c9;
     font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.link {
+    margin-top: 15px;
+}
+
+.menu-admin{
+    list-style: none;
+    padding: 0;
+}
+
+.menu-admin li{
+    margin: 12px 0;
+}
+
+.menu-admin a{
+    display: block;
+    background: #fafaff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ececff;
+    transition: 0.2s;
+}
+
+.menu-admin a:hover{
+    background: #eee7ff;
+    text-decoration: none;
 }
