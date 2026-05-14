@@ -2,6 +2,12 @@
 session_start();
 require '../conexao.php';
 
+if (!isset($_SESSION['user'])) {
+
+    header("Location: ../index.php");
+    exit;
+}
+
 if (
     !isset($_SESSION['tipo']) ||
     $_SESSION['tipo'] != 'admin'
@@ -10,3 +16,5 @@ if (
     exit;
 }
 
+$erro = "";
+$sucesso = "";
