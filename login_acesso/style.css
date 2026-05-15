@@ -122,3 +122,107 @@ a:hover {
     background: #eee7ff;
     text-decoration: none;
 }
+
+
+textarea {
+
+    width: 100%;
+
+    min-height: 180px;
+
+    padding: 14px;
+
+    margin: 10px 0;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    background: rgba(255,255,255,0.65);
+
+    outline: none;
+
+    resize: vertical;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    color: #666;
+
+}
+
+
+textarea:focus {
+
+    border-color: #d8c4ff;
+
+    box-shadow: 0 0 10px rgba(210,190,255,0.4);
+
+}
+
+
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 10px 0 20px 0;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    background: rgba(255,255,255,0.65);
+
+    outline: none;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+
+    color: #666;
+
+    cursor: pointer;
+
+}
+
+
+select:focus {
+
+    border-color: #d8c4ff;
+
+    box-shadow: 0 0 10px rgba(210,190,255,0.4);
+
+}
+
+
+textarea::placeholder,
+input::placeholder {
+
+    color: #999;
+
+}
+
+
+textarea::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+textarea::-webkit-scrollbar-thumb {
+
+    background: #d8c4ff;
+
+    border-radius: 10px;
+
+}
