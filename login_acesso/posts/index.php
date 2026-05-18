@@ -11,7 +11,7 @@ if (
 }
 
 $sql = "
-SELECT posts.*, categorias.nome AS categoria
+SELECT posts. *, categorias.nome AS categoria
 FROM posts
 INNER JOIN categorias
 ON posts.categoria_id = categorias.id

@@ -5,13 +5,13 @@ require "../conexao.php";
 
 if (!isset($_SESSION['email'])) {
 
-    header("location: ../index.php");
+    header("Location: ../index.php");
     exit;
 }
 
 if ($_SESSION['tipo'] != 'admin'){
 
-    header("location: ../home-comum.php");
+    header("Location: ../home-comum.php");
     exit;
 }
 
@@ -19,7 +19,7 @@ $erro = "";
 $sucesso = "";
 
 if (!isset($_GET['id'])){
-    header("location: ../index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -34,7 +34,7 @@ $stmt->execute([$id]);
 $post = $stmt->fetch();
 
 if (!$post) {
-    header("location: ../index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <title>Editar Posts</title>
 
-<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../style.css">
 
 </head>
 <body>

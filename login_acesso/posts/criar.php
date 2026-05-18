@@ -9,7 +9,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 if ($_SESSION['tipo'] != 'admin'){
-    header("location: ../home-comum.php");
+    header("Location: ../home-comum.php");
     exit;
 }
 
