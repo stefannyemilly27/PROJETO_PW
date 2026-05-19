@@ -226,3 +226,121 @@ textarea::-webkit-scrollbar-thumb {
     border-radius: 10px;
 
 }
+
+
+.texto-excluir {
+
+    color: #777;
+
+    margin-bottom: 20px;
+
+}
+
+
+.post-preview {
+
+    background: rgba(255,255,255,0.60);
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+
+.post-preview h2 {
+
+    color: #a18bff;
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.post-preview p {
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+.btn-excluir {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #ffd6de;
+
+    color: #7a4f57;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 15px;
+
+}
+
+
+
+.btn-excluir:hover {
+
+    transform: scale(1.02);
+
+}
+
+
+.btn-cancelar {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #e8e4ff;
+
+    color: #666;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 15px;
+
+}
+
+
+
+.btn-cancelar:hover {
+
+    transform: scale(1.02);
+
+}
