@@ -344,3 +344,121 @@ textarea::-webkit-scrollbar-thumb {
     transform: scale(1.02);
 
 }
+
+
+.categorias {
+
+    background: rgba(255,255,255,0.60);
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    margin-bottom: 18px;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+
+    box-shadow: 0 6px 15px rgba(180, 180, 255, 0.10);
+
+}
+
+
+.categorias:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(180, 180, 255, 0.18);
+
+}
+
+
+.categorias h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    color: #a18bff;
+
+    font-size: 22px;
+
+}
+
+
+.categorias button {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #e8e4ff;
+
+    color: #666;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+
+}
+
+
+.categorias button:hover {
+
+    transform: scale(1.02);
+
+    background: #ddd3ff;
+
+}
+
+
+.categorias a:last-child button {
+
+    background: #ffd6de;
+
+    color: #7a4f57;
+
+}
+
+
+
+.categorias a:last-child button:hover {
+
+    background: #ffc7d2;
+
+}
+
+
+.box > a button {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+}
+
+
+hr {
+
+    border: none;
+
+    height: 1px;
+
+    background: #ece8ff;
+
+    margin: 20px 0;
+
+}

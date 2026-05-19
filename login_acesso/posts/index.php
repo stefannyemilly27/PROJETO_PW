@@ -2,10 +2,7 @@
 session_start();
 require '../conexao.php';
 
-if (
-    !isset($_SESSION['tipo']) ||
-    $_SESSION['tipo'] != 'admin'
-) {
+if ($_SESSION['tipo'] != 'admin') {
     header("Location: ../home-comum.php");
     exit;
 }
