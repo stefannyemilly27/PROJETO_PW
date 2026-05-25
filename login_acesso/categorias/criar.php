@@ -49,6 +49,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="box">
     <h1>Criar Categoria</h1>
     
+    <?php if (!empty($erro)) echo "<p class='erro'>$erro</p>"; ?>
+    <?php if (!empty($sucesso)) echo "<p class='sucesso'>$sucesso</p>"; ?>
+
+    <form method="POST">
+
+    <input type="text" name="nome" placeholder="Nome da Categoria" required>
+
+    <button type="submit">Criar Categoria</button>
+
+    </form>
+
     </div>
 </body>
 </html>

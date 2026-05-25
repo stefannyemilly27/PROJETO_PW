@@ -21,7 +21,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM posts WHERE id = ?";
+$sql = "SELECT * FROM posts WHERE id = ?";
 
 $stmt = $conexao->prepare($sql);
 
@@ -66,13 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     Tem certeza que deseja excluir esse post?
     </p>
 
-    <diV class="post-preview">
+    <div class="post-preview">
 
     <h2><?= $post['titulo'] ?></h2>
 
-    <p><? $post['conteudo'] ?></p>
+    <p><?= $post['conteudo'] ?></p>
 
-    </diV>
+    </div>
 
     <form method="POST">
 
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <a href="index.php">
 
-    <button type="submit" class="btn-cancelar">Cancelar</button>
+    <button type="button" class="btn-cancelar">Cancelar</button>
     
     </a>
 
