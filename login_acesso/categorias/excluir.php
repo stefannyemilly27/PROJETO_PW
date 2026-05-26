@@ -60,12 +60,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
     <div class="box">
+
     <h1>Excluir Categoria</h1>
+
     <p class="texto-excluir">
-        Tem certeza que deseja excluir esse post?
+        Tem certeza que deseja excluir essa categoria?
     </p>
 
+
+
+    <div class="categoria-preview">
+
+        <h2><?= $categoria['nome'] ?></h2>
+
     </div>
+
+
+
+    <form method="POST">
+
+    <button type="submit" class="btn-excluir">Excluir Categoria</button>
+
+    </form>
+
+    <br>
+
+    <a href="index.php" class="btn-cancelar">Cancelar</a>
+
+    </div>
+
 </body>
 </html>
