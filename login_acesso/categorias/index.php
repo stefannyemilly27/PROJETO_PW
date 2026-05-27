@@ -36,13 +36,11 @@ $categorias = $stmt->fetchAll();
 
     <h1>Gerenciar Categorias</h1>
 
-    <a href="criar.php">
-        
-    <button>Criar Categoria</button>
-
-    </a>
+    <a href="criar.php" class="btn-link">Criar Categoria</a>
 
     <hr>
+
+    <?php if (count($categorias) > 0): ?>
 
     <?php foreach($categorias as $categoria): ?>
 
@@ -50,23 +48,27 @@ $categorias = $stmt->fetchAll();
 
         <h2><?= $categoria['nome'] ?></h2>
 
-        <a href="editar.php?id=<?= $categoria['id'] ?>">
+        <div class="acoes">
 
-            <button>Editar</button>
+        <a href="editar.php?id=<?= $categoria['id'] ?>" class="btn-editar">Editar</a>
 
-        </a>
+        <a href="excluir.php?id=<?= $categoria['id'] ?>" class="btn-excluir-link">Excluir</a>
 
-        <a href="excluir.php?id=<?= $categoria['id'] ?>">
-
-            <button>Excluir</button>
-
-        </a>
-        
         </div>
+
+    </div>
 
         <hr>
 
     <?php endforeach; ?>
+
+    <?php else: ?>
+
+        <p class="sem-categorias">Nenhuma categoria cadastrada</p>
+
+    <?php endif; ?>
+
+        <a href="../home-adm.php" class="btn-voltar">Voltar</a>
 
     </div>
 </body>

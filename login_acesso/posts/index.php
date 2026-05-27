@@ -2,19 +2,27 @@
 session_start();
 require '../conexao.php';
 
+if (!isset($_SESSION['email'])){
+
+    header("Location: ../index.php");
+    exit;
+}
+
 if ($_SESSION['tipo'] != 'admin') {
     header("Location: ../home-comum.php");
     exit;
 }
 
 $sql = "
-SELECT posts. *, categorias.nome AS categoria
+SELECT posts.*, categorias.nome AS categoria
 FROM posts
 INNER JOIN categorias
 ON posts.categoria_id = categorias.id
 ";
 
-$posts = $conexao->query($sql);
+$stmt = $conexao->query($sql);
+$posts = $stmt->fetchAll();
+
 ?>
 
 <!DOCTYPE html>

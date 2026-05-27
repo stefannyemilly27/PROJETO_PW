@@ -515,3 +515,254 @@ hr {
 .btn-cancelar:hover{
     background: #e2e6ff;
 }
+
+body{
+    background: #f5f7ff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(180, 180, 255, 0.15);
+    border: 1px solid #ececff;
+}
+
+.box h1{
+    text-align: center;
+    color: #8f84f5;
+    margin-bottom: 25px;
+}
+
+.btn-link{
+    display: inline-block;
+    text-decoration: none;
+    background: #dfe7ff;
+    color: #555;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+    margin-bottom: 20px;
+}
+
+.btn-link:hover{
+    background: #d4ccff;
+}
+
+.categorias{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.categorias h2{
+    margin: 0;
+    color: #555;
+    font-size: 22px;
+}
+
+.acoes{
+    display: flex;
+    gap: 12px;
+}
+
+.btn-editar{
+    text-decoration: none;
+    background: #eef1ff;
+    color: #666;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-editar:hover{
+    background: #dbe3ff;
+}
+
+.btn-excluir-link{
+    text-decoration: none;
+    background: #ffe5e5;
+    color: #cc5555;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-excluir-link:hover{
+    background: #ffd4d4;
+}
+
+.sem-categorias{
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin: 30px 0;
+}
+
+.btn-voltar{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #eef1ff;
+    color: #666;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: 0.2s;
+}
+
+.btn-voltar:hover{
+    background: #dbe3ff;
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background: #ececff;
+    margin: 15px 0;
+}
+
+
+.container-posts{
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.titulo-pagina{
+    text-align: center;
+    color: #9b8cff;
+    margin-bottom: 30px;
+}
+
+.post-card{
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #ececff;
+    box-shadow: 0 6px 15px rgba(180,180,255,0.15);
+}
+
+.titulo-post{
+    color: #8f84f5;
+    margin-bottom: 10px;
+}
+
+.categoria-post{
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.conteudo-post{
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.titulo-comentarios{
+    color: #9b8cff;
+    margin-bottom: 15px;
+}
+
+.comentario-box{
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.autor-comentario{
+    font-weight: bold;
+    color: #8f84f5;
+    margin-bottom: 8px;
+}
+
+.texto-comentario{
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.acoes-comentario{
+    display: flex;
+    gap: 15px;
+}
+
+.acoes-comentario a{
+    text-decoration: none;
+    color: #8f84f5;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.acoes-comentario a:hover{
+    text-decoration: underline;
+}
+
+.sem-comentarios{
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.form-comentario textarea{
+    width: 100%;
+    min-height: 90px;
+    border-radius: 12px;
+    border: 1px solid #ececff;
+    background: #fafaff;
+    padding: 12px;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.form-comentario textarea:focus{
+    border-color: #d8d1ff;
+}
+
+.form-comentario button{
+    width: 100%;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    background: #dfe7ff;
+    color: #555;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-comentario button:hover{
+    background: #d4ccff;
+}
+
+.btn-voltar{
+    display: block;
+    text-align: center;
+    background: #eef1ff;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-voltar:hover{
+    background: #e3e7ff;
+}
