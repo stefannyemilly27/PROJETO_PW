@@ -12,7 +12,7 @@ if (
     $_SESSION['tipo'] !== 'admin'
 ) {
 
-    header("Location: blog/home-comum.php");
+    header("Location: home-comum.php");
     exit;
 }
 ?>

@@ -128,6 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     <?php else: ?>
     <p class="sem-comentarios">Não existe nenhum comentário ainda</p>
+    
 
     <?php endif; ?>
 
@@ -146,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     <?php endforeach; ?>
 
-    <a href="../home-comum.php" class="btn-voltar">Voltar</a>
+    <a href="../blog/home-comum.php" class="btn-voltar">Voltar</a>
 
         
     </div>

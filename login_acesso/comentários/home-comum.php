@@ -42,7 +42,7 @@ if (
 
     <ul>
         <li><a href="post.php">Ver Posts</a></li>
-        <li><a href="comentar.php">Comentar nos Posts</a></li>
+        <li><a href="index.php">Comentar nos Posts</a></li>
         <li><a href="categoria.php">Ver posts por categorias</a></li>
     </ul>
 

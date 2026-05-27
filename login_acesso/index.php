@@ -46,7 +46,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 
             } else {
 
-                header("Location: blog/home-comum.php");
+                header("Location: home-comum.php");
             }
 
             exit;
