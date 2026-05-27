@@ -7,16 +7,11 @@ if (!isset($_SESSION['email'])){
 
     header("Location: ../index.php");
     exit;
-}
 
-if ($_SESSION['tipo'] != 'usuario'){
-
-    header("Location: ../home-adm.php");
-    exit;
 }
 
 $sql = "
-SELECT posts.*, categorias.nome AS categorias
+SELECT posts.*, categorias.nome AS categoria
 FROM posts
 INNER JOIN categorias 
 ON posts.categoria_id = categorias.id
@@ -71,81 +66,87 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 </head>
 <body>
     <div class="container-posts">
-    <h1 class="titulo-pagina">Posts do Blog</h1>
+        <h1 class="titulo-pagina">Posts do Blog</h1>
 
-    <?php if (!empty($erro)) echo "<p class='erro'>$erro</p>"; ?>
-    <?php if (!empty($sucesso)) echo "<p class='sucesso'>$sucesso</p>"; ?>
+        <?php if (!empty($erro)) echo "<p class='erro'>$erro</p>"; ?>
+        <?php if (!empty($sucesso)) echo "<p class='sucesso'>$sucesso</p>"; ?>
 
-    <?php foreach($posts as $post): ?>
+        <?php foreach($posts as $post): ?>
         
-        <div class="post-card">
-            <h2 class="titulo-post"><?= $post['titulo'] ?></h2>
+    <div class="post-card">
+        <h2 class="titulo-post"><?= $post['titulo'] ?></h2>
 
-            <p class="categoria-post">Categoria: <?= $post['categoria'] ?></p>
+        <p class="categoria-post">Categoria: <?= $post['categoria'] ?></p>
 
-            <p class="conteudo-post"><?= $post['conteudo'] ?></p>
+        <p class="conteudo-post"><?= $post['conteudo'] ?></p>
 
-            <hr>
+        <hr>
 
-            <h3 class="titulo-comentarios">Comentários<h3>
+        <h3 class="titulo-comentarios">Comentários</h3>
 
-            <?php
+        <?php
 
-            $sqlComentarios = "
-            SELECT comentarios.*, usuarios_login.email
-            FROM comentarios
-            INNER JOIN usuarios_login
-            ON comentarios.usuario_id = usuarios_login.id
-            WHERE comentarios.post_id = ?
-            ORDER BY comentarios.data_comentario DESC
-            ";
+        $sqlComentarios = "
+        SELECT comentarios.*, usuarios_login.email
+        FROM comentarios
+        INNER JOIN usuarios_login
+        ON comentarios.usuario_id = usuarios_login.id
+        WHERE comentarios.post_id = ?
+        ORDER BY comentarios.data_comentario DESC
+        ";
 
-            $stmtComentarios = $conexao->prepare($sqlComentarios);
+        $stmtComentarios = $conexao->prepare($sqlComentarios);
 
-            $stmtComentarios->execute([$post['id']]);
+        $stmtComentarios->execute([$post['id']]);
 
-            $comentarios = $stmtComentarios->fetchAll();
+        $comentarios = $stmtComentarios->fetchAll();
 
-            ?>
-            <?php if(count($comentarios) > 0): ?>
+        ?>
 
-                 <?php foreach($comentarios as $comentario): ?>
+        <?php if(count($comentarios) > 0): ?>
 
-                    <div class="comentario-box">
+        <?php foreach($comentarios as $comentario): ?>
 
-                    <p class="autor-comentario"><?= $comentario['email'] ?></p>
+    <div class="comentario-box">
 
-                    <p class="texto-comentario"> <?= $comentario['comentario'] ?></p>
+        <p class="autor-comentario"><?= $comentario['email'] ?></p>
 
-                    <?php if($comentario['usuario_id'] == $_SESSION['id']): ?>
+        <p class="texto-comentario"> <?= $comentario['comentario'] ?></p>
+
+        <?php if($comentario['usuario_id'] == $_SESSION['id']): ?>
                     
-                        <div class="acoes-comentario">
-                            <a href="../comentarios/editar.php?id=<?= $comentario['id'] ?>">Editar</a>
-                            <a href="../comentarios/excluir.php?id=<?= $comentario['id'] ?>">Excluir</a>
+    <div class="acoes-comentario">
+        <a href="../comentarios/editar.php?id=<?= $comentario['id'] ?>">Editar</a>
+        <a href="../comentarios/excluir.php?id=<?= $comentario['id'] ?>">Excluir</a>
 
-                        </div>
-                        <?php endif; ?>
+    </div>
+    <?php endif; ?>
 
-                     </div>
+    </div>
 
-                     <?php endforeach; ?>
+    <?php endforeach; ?>
 
-                     <?php else: ?>
-                        <p class="sem-comentarios">Não existe nenhum comentário ainda</p>
+    <?php else: ?>
+    <p class="sem-comentarios">Não existe nenhum comentário ainda</p>
 
-                        <?php endif; ?>
-                        
-                            <form method="POST" class="form-comentario">
+    <?php endif; ?>
 
-                                 <textarea name="comentario" placeholder="Digite seu comentário..." required></textarea>
-                                 <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
-                                 <button type="submit">Comentar</button>
-                            </form>
+    <?php if ($_SESSION['tipo'] == 'usuario'): ?>
 
-        </div>
-        <?php endforeach; ?>
+    <form method="POST" class="form-comentario">
 
-        <a href="../home-comum.php" class="btn-voltar">Voltar</a>
+        <textarea name="comentario" placeholder="Digite seu comentário..." required></textarea>
+        <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
+        <button type="submit">Comentar</button>
+    </form>
+
+    <?php endif; ?>
+
+    </div>
+    
+    <?php endforeach; ?>
+
+    <a href="../home-comum.php" class="btn-voltar">Voltar</a>
 
         
     </div>

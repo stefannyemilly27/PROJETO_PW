@@ -1,768 +1,419 @@
-body {
+/* =========================
+RESET E BODY
+========================= */
+
+body{
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #ffeaf4, #eaf3ff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.box {
+/* =========================
+BOX PRINCIPAL
+========================= */
+
+.box{
+    width: 95%;
+    max-width: 1250px;
+    margin: auto;
     background: #ffffff;
-    padding: 28px;
-    border-radius: 16px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 6px 15px rgba(180, 180, 255, 0.15);
-    border: 1px solid #f0f0ff;
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid #ececff;
+    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
     position: relative;
 }
 
-.box::after {
+.box::after{
     content: "";
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
-    height: 5px;
+    height: 6px;
     background: #e6ddff;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
 }
 
-h1 {
-    color: #a59cf5;
-    margin-bottom: 18px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 10px;
-    border: 1px solid #ececff;
-    background: #fafaff;
-    outline: none;
-    transition: 0.2s;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-input:focus {
-    border-color: #dcd4ff;
-}
-
-.tipo-input {
-    margin-bottom: 20px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #dfe7ff;
-    color: #555;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    background: #d6ccff;
-}
-
-a {
-    color: #a59cf5;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.erro {
-    color: #ff9aa2;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-
-.sucesso {
-    color: #7fd6c9;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.link {
-    margin-top: 15px;
-}
-
-.menu-admin{
-    list-style: none;
-    padding: 0;
-}
-
-.menu-admin li{
-    margin: 12px 0;
-}
-
-.menu-admin a{
-    display: block;
-    background: #fafaff;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ececff;
-    transition: 0.2s;
-}
-
-.menu-admin a:hover{
-    background: #eee7ff;
-    text-decoration: none;
-}
-
-
-textarea {
-
-    width: 100%;
-
-    min-height: 180px;
-
-    padding: 14px;
-
-    margin: 10px 0;
-
-    border-radius: 15px;
-
-    border: 1px solid rgba(255,255,255,0.5);
-
-    background: rgba(255,255,255,0.65);
-
-    outline: none;
-
-    resize: vertical;
-
-    transition: 0.3s;
-
-    box-sizing: border-box;
-
-    font-size: 15px;
-
-    font-family: Arial, sans-serif;
-
-    color: #666;
-
-}
-
-
-textarea:focus {
-
-    border-color: #d8c4ff;
-
-    box-shadow: 0 0 10px rgba(210,190,255,0.4);
-
-}
-
-
-select {
-
-    width: 100%;
-
-    padding: 14px;
-
-    margin: 10px 0 20px 0;
-
-    border-radius: 15px;
-
-    border: 1px solid rgba(255,255,255,0.5);
-
-    background: rgba(255,255,255,0.65);
-
-    outline: none;
-
-    transition: 0.3s;
-
-    box-sizing: border-box;
-
-    font-size: 15px;
-
-    color: #666;
-
-    cursor: pointer;
-
-}
-
-
-select:focus {
-
-    border-color: #d8c4ff;
-
-    box-shadow: 0 0 10px rgba(210,190,255,0.4);
-
-}
-
-
-textarea::placeholder,
-input::placeholder {
-
-    color: #999;
-
-}
-
-
-textarea::-webkit-scrollbar {
-
-    width: 8px;
-
-}
-
-
-textarea::-webkit-scrollbar-thumb {
-
-    background: #d8c4ff;
-
-    border-radius: 10px;
-
-}
-
-
-.texto-excluir {
-
-    color: #777;
-
-    margin-bottom: 20px;
-
-}
-
-
-.post-preview {
-
-    background: rgba(255,255,255,0.60);
-
-    border: 1px solid rgba(255,255,255,0.4);
-
-    border-radius: 18px;
-
-    padding: 18px;
-
-    margin-bottom: 20px;
-
-    text-align: left;
-
-    backdrop-filter: blur(10px);
-
-}
-
-
-
-.post-preview h2 {
-
-    color: #a18bff;
-
-    margin-top: 0;
-
-    margin-bottom: 10px;
-
-}
-
-
-
-.post-preview p {
-
-    color: #666;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-}
-
-
-.btn-excluir {
-
-    width: 100%;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background: #ffd6de;
-
-    color: #7a4f57;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-size: 15px;
-
-}
-
-
-
-.btn-excluir:hover {
-
-    transform: scale(1.02);
-
-}
-
-
-.btn-cancelar {
-
-    width: 100%;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background: #e8e4ff;
-
-    color: #666;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-size: 15px;
-
-}
-
-
-
-.btn-cancelar:hover {
-
-    transform: scale(1.02);
-
-}
-
-
-.categorias {
-
-    background: rgba(255,255,255,0.60);
-
-    border: 1px solid rgba(255,255,255,0.4);
-
-    border-radius: 18px;
-
-    padding: 18px;
-
-    margin-bottom: 18px;
-
-    backdrop-filter: blur(10px);
-
-    transition: 0.3s;
-
-    box-shadow: 0 6px 15px rgba(180, 180, 255, 0.10);
-
-}
-
-
-.categorias:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 20px rgba(180, 180, 255, 0.18);
-
-}
-
-
-.categorias h2 {
-
-    margin-top: 0;
-
-    margin-bottom: 15px;
-
-    color: #a18bff;
-
-    font-size: 22px;
-
-}
-
-
-.categorias button {
-
-    width: 100%;
-
-    padding: 10px;
-
-    margin-top: 10px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #e8e4ff;
-
-    color: #666;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-size: 14px;
-
-}
-
-
-.categorias button:hover {
-
-    transform: scale(1.02);
-
-    background: #ddd3ff;
-
-}
-
-
-.categorias a:last-child button {
-
-    background: #ffd6de;
-
-    color: #7a4f57;
-
-}
-
-
-
-.categorias a:last-child button:hover {
-
-    background: #ffc7d2;
-
-}
-
-
-.box > a button {
-
-    width: 100%;
-
-    margin-bottom: 20px;
-
-}
-
-
-hr {
-
-    border: none;
-
-    height: 1px;
-
-    background: #ece8ff;
-
-    margin: 20px 0;
-
-}
-
-.texto-excluir{
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.categoria-preview{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 20px;
-}
-
-.categoria-preview h2{
-    margin: 0;
-    color: #8f84f5;
-    font-size: 20px;
-}
-
-.btn-excluir{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #ffd6de;
-    color: #555;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-excluir:hover{
-    background: #ffc5d1;
-}
-
-.btn-cancelar{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: #eef1ff;
-    color: #666;
-    text-decoration: none;
-    font-weight: bold;
-    box-sizing: border-box;
-    transition: 0.2s;
-}
-
-.btn-cancelar:hover{
-    background: #e2e6ff;
-}
-
-body{
-    background: #f5f7ff;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.box{
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(180, 180, 255, 0.15);
-    border: 1px solid #ececff;
-}
-
-.box h1{
+/* =========================
+TÍTULOS
+========================= */
+
+h1{
     text-align: center;
     color: #8f84f5;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    font-size: 42px;
 }
+
+h2{
+    margin: 0;
+}
+
+/* =========================
+LINKS
+========================= */
+
+a{
+    text-decoration: none;
+}
+
+/* =========================
+BOTÃO CRIAR
+========================= */
 
 .btn-link{
     display: inline-block;
-    text-decoration: none;
     background: #dfe7ff;
     color: #555;
-    padding: 12px 20px;
-    border-radius: 12px;
+    padding: 14px 22px;
+    border-radius: 14px;
     font-weight: bold;
+    margin-bottom: 35px;
     transition: 0.2s;
-    margin-bottom: 20px;
 }
 
 .btn-link:hover{
     background: #d4ccff;
 }
 
-.categorias{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0;
+/* =========================
+CARDS DOS CRUDS
+========================= */
+
+.categorias,
+.post,
+.post-card,
+.comentario-box{
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 28px;
+    transition: 0.25s;
+    box-shadow: 0 4px 12px rgba(180,180,255,0.08);
 }
 
-.categorias h2{
-    margin: 0;
+.categorias:hover,
+.post:hover,
+.post-card:hover,
+.comentario-box:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
+}
+
+/* =========================
+TÍTULOS DOS CARDS
+========================= */
+
+.categorias h2,
+.post h3,
+.post-card h2{
+    color: #7f74f0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+TEXTOS
+========================= */
+
+.post p,
+.post-card p,
+.texto-comentario{
     color: #555;
-    font-size: 22px;
+    line-height: 1.7;
+    font-size: 15px;
 }
 
-.acoes{
+small,
+.categoria-post,
+.autor-comentario{
+    color: #888;
+    font-size: 14px;
+}
+
+/* =========================
+AÇÕES DOS CRUDS
+========================= */
+
+.acoes,
+.acoes-comentario{
     display: flex;
     gap: 12px;
+    margin-top: 22px;
+    flex-wrap: wrap;
 }
 
-.btn-editar{
-    text-decoration: none;
+/* =========================
+BOTÃO EDITAR
+========================= */
+
+.btn-editar,
+.acoes a:first-child{
     background: #eef1ff;
     color: #666;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 11px 18px;
+    border-radius: 12px;
     font-weight: bold;
     transition: 0.2s;
+    display: inline-block;
 }
 
-.btn-editar:hover{
+.btn-editar:hover,
+.acoes a:first-child:hover{
     background: #dbe3ff;
 }
 
-.btn-excluir-link{
-    text-decoration: none;
+/* =========================
+BOTÃO EXCLUIR
+========================= */
+
+.btn-excluir-link,
+.acoes a:last-child{
     background: #ffe5e5;
     color: #cc5555;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 11px 18px;
+    border-radius: 12px;
     font-weight: bold;
     transition: 0.2s;
+    display: inline-block;
 }
 
-.btn-excluir-link:hover{
+.btn-excluir-link:hover,
+.acoes a:last-child:hover{
     background: #ffd4d4;
 }
 
-.sem-categorias{
-    text-align: center;
-    color: #888;
-    font-size: 16px;
-    margin: 30px 0;
-}
+/* =========================
+BOTÃO VOLTAR
+========================= */
 
 .btn-voltar{
     display: block;
+    width: 220px;
+    margin: 35px auto 0;
     text-align: center;
-    text-decoration: none;
     background: #eef1ff;
     color: #666;
-    padding: 12px;
-    border-radius: 12px;
+    padding: 14px;
+    border-radius: 14px;
     font-weight: bold;
-    margin-top: 25px;
     transition: 0.2s;
 }
 
 .btn-voltar:hover{
     background: #dbe3ff;
 }
+
+/* =========================
+FORMULÁRIOS
+========================= */
+
+form{
+    width: 100%;
+}
+
+input,
+textarea,
+select{
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 14px;
+    border: 1px solid #ececff;
+    background: #fafaff;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color: #d8c4ff;
+    box-shadow: 0 0 8px rgba(210,190,255,0.3);
+}
+
+textarea{
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* =========================
+BOTÕES GERAIS
+========================= */
+
+button{
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button[type="submit"]{
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background: #dfe7ff;
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+button[type="submit"]:hover{
+    background: #d4ccff;
+}
+
+/* =========================
+MENSAGENS
+========================= */
+
+.erro{
+    color: #ff7d92;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.sucesso{
+    color: #62bfae;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* =========================
+TELA EXCLUIR
+========================= */
+
+.texto-excluir{
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.categoria-preview,
+.post-preview{
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.categoria-preview h2,
+.post-preview h2{
+    color: #8f84f5;
+    margin-bottom: 10px;
+}
+
+.post-preview p{
+    color: #555;
+    line-height: 1.6;
+}
+
+/* =========================
+BOTÃO EXCLUIR
+========================= */
+
+.btn-excluir{
+    width: 100%;
+    padding: 14px;
+    background: #ffd6de;
+    color: #7a4f57;
+    border-radius: 14px;
+    font-weight: bold;
+}
+
+.btn-excluir:hover{
+    background: #ffc5d1;
+}
+
+/* =========================
+BOTÃO CANCELAR
+========================= */
+
+.btn-cancelar{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    border-radius: 14px;
+    background: #eef1ff;
+    color: #666;
+    font-weight: bold;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+.btn-cancelar:hover{
+    background: #dbe3ff;
+}
+
+/* =========================
+COMENTÁRIOS
+========================= */
+
+.titulo-comentarios{
+    color: #8f84f5;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sem-comentarios{
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.form-comentario textarea{
+    min-height: 100px;
+}
+
+/* =========================
+LINHA
+========================= */
 
 hr{
     border: none;
     height: 1px;
     background: #ececff;
-    margin: 15px 0;
+    margin: 25px 0;
 }
 
+/* =========================
+RESPONSIVO
+========================= */
 
-.container-posts{
-    width: 90%;
-    max-width: 900px;
-    margin: 40px auto;
-}
+@media (max-width: 768px){
 
-.titulo-pagina{
-    text-align: center;
-    color: #9b8cff;
-    margin-bottom: 30px;
-}
+    .box{
+        padding: 25px;
+    }
 
-.post-card{
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 30px;
-    border: 1px solid #ececff;
-    box-shadow: 0 6px 15px rgba(180,180,255,0.15);
-}
+    h1{
+        font-size: 32px;
+    }
 
-.titulo-post{
-    color: #8f84f5;
-    margin-bottom: 10px;
-}
+    .categorias h2,
+    .post h3,
+    .post-card h2{
+        font-size: 24px;
+    }
 
-.categoria-post{
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
+    .acoes,
+    .acoes-comentario{
+        flex-direction: column;
+    }
 
-.conteudo-post{
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.titulo-comentarios{
-    color: #9b8cff;
-    margin-bottom: 15px;
-}
-
-.comentario-box{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-.autor-comentario{
-    font-weight: bold;
-    color: #8f84f5;
-    margin-bottom: 8px;
-}
-
-.texto-comentario{
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.acoes-comentario{
-    display: flex;
-    gap: 15px;
-}
-
-.acoes-comentario a{
-    text-decoration: none;
-    color: #8f84f5;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.acoes-comentario a:hover{
-    text-decoration: underline;
-}
-
-.sem-comentarios{
-    color: #999;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.form-comentario textarea{
-    width: 100%;
-    min-height: 90px;
-    border-radius: 12px;
-    border: 1px solid #ececff;
-    background: #fafaff;
-    padding: 12px;
-    resize: vertical;
-    outline: none;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-}
-
-.form-comentario textarea:focus{
-    border-color: #d8d1ff;
-}
-
-.form-comentario button{
-    width: 100%;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    background: #dfe7ff;
-    color: #555;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.form-comentario button:hover{
-    background: #d4ccff;
-}
-
-.btn-voltar{
-    display: block;
-    text-align: center;
-    background: #eef1ff;
-    padding: 12px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #666;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.btn-voltar:hover{
-    background: #e3e7ff;
+    .btn-editar,
+    .btn-excluir-link,
+    .acoes a{
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
 }
