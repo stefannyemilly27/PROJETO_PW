@@ -1,218 +1,89 @@
-/* =========================
-RESET E BODY
-========================= */
+/* =========================================================
+RESET GERAL
+========================================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
-    margin: 0;
     padding: 40px 20px;
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #ffeaf4, #eaf3ff);
     min-height: 100vh;
-    box-sizing: border-box;
 }
 
-/* =========================
-BOX PRINCIPAL
-========================= */
+a{
+    text-decoration: none;
+}
 
-.box{
-    width: 95%;
-    max-width: 1250px;
-    margin: auto;
+button{
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background: #ececff;
+    margin: 25px 0;
+}
+
+
+/* =========================================================
+ESTRUTURA PRINCIPAL
+========================================================= */
+
+.box,
+.box-comentario{
+    width: 90%;
+    margin: 40px auto;
     background: #ffffff;
     padding: 35px;
     border-radius: 24px;
     border: 1px solid #ececff;
     box-shadow: 0 8px 20px rgba(180,180,255,0.15);
-    position: relative;
 }
 
-.box::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 6px;
-    background: #e6ddff;
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 24px;
+.box{
+    max-width: 500px;
 }
 
-/* =========================
-TÍTULOS
-========================= */
+.box-comentario{
+    max-width: 850px;
+}
 
-h1{
+
+/* =========================================================
+TÍTULOS GERAIS
+========================================================= */
+
+h1,
+.titulo-pagina{
     text-align: center;
     color: #8f84f5;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+}
+
+h1{
     font-size: 42px;
+}
+
+.titulo-pagina{
+    font-size: 32px;
 }
 
 h2{
     margin: 0;
 }
 
-/* =========================
-LINKS
-========================= */
 
-a{
-    text-decoration: none;
-}
-
-/* =========================
-BOTÃO CRIAR
-========================= */
-
-.btn-link{
-    display: inline-block;
-    background: #dfe7ff;
-    color: #555;
-    padding: 14px 22px;
-    border-radius: 14px;
-    font-weight: bold;
-    margin-bottom: 35px;
-    transition: 0.2s;
-}
-
-.btn-link:hover{
-    background: #d4ccff;
-}
-
-/* =========================
-CARDS DOS CRUDS
-========================= */
-
-.categorias,
-.post,
-.post-card,
-.comentario-box{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 28px;
-    transition: 0.25s;
-    box-shadow: 0 4px 12px rgba(180,180,255,0.08);
-}
-
-.categorias:hover,
-.post:hover,
-.post-card:hover,
-.comentario-box:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
-}
-
-/* =========================
-TÍTULOS DOS CARDS
-========================= */
-
-.categorias h2,
-.post h3,
-.post-card h2{
-    color: #7f74f0;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-/* =========================
-TEXTOS
-========================= */
-
-.post p,
-.post-card p,
-.texto-comentario{
-    color: #555;
-    line-height: 1.7;
-    font-size: 15px;
-}
-
-small,
-.categoria-post,
-.autor-comentario{
-    color: #888;
-    font-size: 14px;
-}
-
-/* =========================
-AÇÕES DOS CRUDS
-========================= */
-
-.acoes,
-.acoes-comentario{
-    display: flex;
-    gap: 12px;
-    margin-top: 22px;
-    flex-wrap: wrap;
-}
-
-/* =========================
-BOTÃO EDITAR
-========================= */
-
-.btn-editar,
-.acoes a:first-child{
-    background: #eef1ff;
-    color: #666;
-    padding: 11px 18px;
-    border-radius: 12px;
-    font-weight: bold;
-    transition: 0.2s;
-    display: inline-block;
-}
-
-.btn-editar:hover,
-.acoes a:first-child:hover{
-    background: #dbe3ff;
-}
-
-/* =========================
-BOTÃO EXCLUIR
-========================= */
-
-.btn-excluir-link,
-.acoes a:last-child{
-    background: #ffe5e5;
-    color: #cc5555;
-    padding: 11px 18px;
-    border-radius: 12px;
-    font-weight: bold;
-    transition: 0.2s;
-    display: inline-block;
-}
-
-.btn-excluir-link:hover,
-.acoes a:last-child:hover{
-    background: #ffd4d4;
-}
-
-/* =========================
-BOTÃO VOLTAR
-========================= */
-
-.btn-voltar{
-    display: block;
-    width: 220px;
-    margin: 35px auto 0;
-    text-align: center;
-    background: #eef1ff;
-    color: #666;
-    padding: 14px;
-    border-radius: 14px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.btn-voltar:hover{
-    background: #dbe3ff;
-}
-
-/* =========================
-FORMULÁRIOS
-========================= */
+/* =========================================================
+FORMULÁRIOS GERAIS
+========================================================= */
 
 form{
     width: 100%;
@@ -227,7 +98,6 @@ select{
     border-radius: 14px;
     border: 1px solid #ececff;
     background: #fafaff;
-    box-sizing: border-box;
     outline: none;
     font-size: 15px;
     transition: 0.2s;
@@ -241,53 +111,190 @@ select:focus{
 }
 
 textarea{
-    min-height: 180px;
     resize: vertical;
 }
 
-/* =========================
-BOTÕES GERAIS
-========================= */
+textarea::placeholder,
+input::placeholder{
+    color: #aaa;
+}
 
-button{
-    border: none;
-    cursor: pointer;
+
+/* =========================================================
+BOTÕES GERAIS
+========================================================= */
+
+.btn-link,
+.btn-voltar,
+.btn-cancelar,
+.btn-editar,
+.btn-excluir-link,
+.btn-comentar,
+.btn-excluir,
+button[type="submit"]{
+    font-weight: bold;
+    border-radius: 14px;
     transition: 0.2s;
 }
 
-button[type="submit"]{
-    width: 100%;
+
+/* =========================================================
+MENSAGENS
+========================================================= */
+
+.erro,
+.sucesso{
     padding: 14px;
     border-radius: 14px;
-    background: #dfe7ff;
-    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
     font-weight: bold;
-    font-size: 15px;
 }
-
-button[type="submit"]:hover{
-    background: #d4ccff;
-}
-
-/* =========================
-MENSAGENS
-========================= */
 
 .erro{
-    color: #ff7d92;
-    margin-bottom: 15px;
-    font-weight: bold;
+    background: #ffe3e6;
+    color: #c45b6d;
 }
 
 .sucesso{
-    color: #62bfae;
-    margin-bottom: 15px;
-    font-weight: bold;
+    background: #e3fff2;
+    color: #4e9b7d;
 }
 
-/* =========================
-TELA EXCLUIR
-========================= */
+
+/* =========================================================
+CRUD DE CATEGORIAS
+========================================================= */
+
+.categorias{
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 12px rgba(180,180,255,0.08);
+    transition: 0.25s;
+}
+
+.categorias:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
+}
+
+.categorias h2{
+    color: #7f74f0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.acoes{
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-link{
+    display: inline-block;
+    background: #dfe7ff;
+    color: #555;
+    padding: 14px 22px;
+    margin-bottom: 35px;
+}
+
+.btn-link:hover{
+    background: #d4ccff;
+}
+
+.btn-editar{
+    background: #eef1ff;
+    color: #666;
+    padding: 11px 18px;
+}
+
+.btn-editar:hover{
+    background: #dbe3ff;
+}
+
+.btn-excluir-link{
+    background: #ffe5e5;
+    color: #cc5555;
+    padding: 11px 18px;
+}
+
+.btn-excluir-link:hover{
+    background: #ffd4d4;
+}
+
+.btn-voltar{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #eef1ff;
+    color: #666;
+    padding: 14px;
+    margin-top: 20px;
+}
+
+.btn-voltar:hover{
+    background: #dbe3ff;
+}
+
+.sem-categorias{
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 14px;
+}
+
+/* =========================================================
+CRUD DE POSTS
+========================================================= */
+
+.post,
+.post-card{
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 12px rgba(180,180,255,0.08);
+    transition: 0.25s;
+}
+
+.post:hover,
+.post-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
+}
+
+.post h3,
+.post-card h2{
+    color: #7f74f0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.post p,
+.post-card p{
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+small{
+    color: #888;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+CRUD DE EXCLUSÃO
+========================================================= */
 
 .texto-excluir{
     text-align: center;
@@ -296,67 +303,54 @@ TELA EXCLUIR
     font-size: 15px;
 }
 
-.categoria-preview,
-.post-preview{
+.post-preview,
+.categoria-preview{
     background: #fafaff;
     border: 1px solid #ececff;
-    border-radius: 16px;
-    padding: 22px;
+    border-radius: 18px;
+    padding: 25px;
     margin-bottom: 25px;
 }
 
-.categoria-preview h2,
-.post-preview h2{
+.post-preview h2,
+.categoria-preview h2{
     color: #8f84f5;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .post-preview p{
     color: #555;
-    line-height: 1.6;
+    line-height: 1.7;
 }
-
-/* =========================
-BOTÃO EXCLUIR
-========================= */
 
 .btn-excluir{
     width: 100%;
     padding: 14px;
     background: #ffd6de;
     color: #7a4f57;
-    border-radius: 14px;
-    font-weight: bold;
 }
 
 .btn-excluir:hover{
     background: #ffc5d1;
 }
 
-/* =========================
-BOTÃO CANCELAR
-========================= */
-
 .btn-cancelar{
     display: block;
     width: 100%;
     text-align: center;
-    padding: 14px;
-    border-radius: 14px;
     background: #eef1ff;
     color: #666;
-    font-weight: bold;
-    box-sizing: border-box;
-    transition: 0.2s;
+    padding: 14px;
 }
 
 .btn-cancelar:hover{
     background: #dbe3ff;
 }
 
-/* =========================
-COMENTÁRIOS
-========================= */
+
+/* =========================================================
+CRUD DE COMENTÁRIOS
+========================================================= */
 
 .titulo-comentarios{
     color: #8f84f5;
@@ -364,33 +358,87 @@ COMENTÁRIOS
     margin-bottom: 20px;
 }
 
+.comentario-box{
+    background: #fafaff;
+    border: 1px solid #ececff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.autor-comentario{
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.texto-comentario{
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.acoes-comentario{
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
 .sem-comentarios{
     color: #888;
     margin-bottom: 20px;
 }
 
+.form-comentario{
+    margin-top: 20px;
+}
+
 .form-comentario textarea{
-    min-height: 100px;
+    min-height: 120px;
 }
 
-/* =========================
-LINHA
-========================= */
-
-hr{
-    border: none;
-    height: 1px;
-    background: #ececff;
-    margin: 25px 0;
+.btn-comentar,
+button[type="submit"]{
+    width: 100%;
+    padding: 14px;
+    background: #dfe7ff;
+    color: #555;
+    font-size: 15px;
 }
 
-/* =========================
+.btn-comentar:hover,
+button[type="submit"]:hover{
+    background: #d4ccff;
+}
+
+.titulo-post{
+    color: #7f74f0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.categoria-post{
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.conteudo-post{
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
 RESPONSIVO
-========================= */
+========================================================= */
 
 @media (max-width: 768px){
 
-    .box{
+    .box,
+    .box-comentario{
         padding: 25px;
     }
 
@@ -398,9 +446,11 @@ RESPONSIVO
         font-size: 32px;
     }
 
+    .titulo-pagina,
     .categorias h2,
     .post h3,
-    .post-card h2{
+    .post-card h2,
+    .titulo-post{
         font-size: 24px;
     }
 
@@ -410,10 +460,9 @@ RESPONSIVO
     }
 
     .btn-editar,
-    .btn-excluir-link,
-    .acoes a{
+    .btn-excluir-link{
         width: 100%;
         text-align: center;
-        box-sizing: border-box;
     }
+
 }

@@ -31,12 +31,21 @@ $stmt->execute([$id]);
 
 $categoria = $stmt->fetch();
 
-if (!$categoria) {
+if (!$categoria){
+
     header("Location: index.php");
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $sql = "SELECT COUNT(*) FROM posts WHERE categoria_id = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute([$id]);
+
+    if ($stmt->fetchColumn() > 0) {
+        die("Não é possível excluir: existem posts nessa categoria.");
+    }
 
     $sql = "DELETE FROM categorias WHERE id = ?";
 
@@ -54,22 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excluir Categoria</title>
-    <link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<title>Excluir Categoria</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
     <div class="box">
-
-    <h1>Excluir Categoria</h1>
-
-    <p class="texto-excluir">
-        Tem certeza que deseja excluir essa categoria?
-    </p>
-
-
+        <h1>Excluir Categoria</h1>
+        <p class="texto-excluir">Tem certeza que deseja excluir essa categoria?</p>
 
     <div class="categoria-preview">
 
@@ -77,12 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </div>
 
-
-
+    
     <form method="POST">
-
-    <button type="submit" class="btn-excluir">Excluir Categoria</button>
-
+        <button type="submit" class="btn-excluir">Excluir Categoria</button>
     </form>
 
     <br>

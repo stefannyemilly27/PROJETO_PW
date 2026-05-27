@@ -104,27 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-<input
-type="text"
-name="titulo"
-value="<?= $post['titulo'] ?>"
-required
->
+<input type="text" name="titulo" value="<?= $post['titulo'] ?>" required>
 
+<textarea name="conteudo" required><?= $post['conteudo'] ?></textarea>
 
-
-<textarea
-name="conteudo"
-required
-><?= $post['conteudo'] ?></textarea>
-
-
-
-<button type="submit">
-
-Salvar Alterações
-
-</button>
+<button type="submit">Salvar</button>
 
 </form>
 

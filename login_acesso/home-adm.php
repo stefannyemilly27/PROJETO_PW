@@ -21,7 +21,7 @@ if (
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Home ADM</title>
+<title>Home adm</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>

@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         <input type="text" name="nome" value="<?= $categoria['nome'] ?>" placeholder="Nome da Categoria" required>
 
-        <button type="submit">Editar Categoria</button>
+        <button type="submit">Salvar</button>
 
         </form>
 
