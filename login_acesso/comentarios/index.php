@@ -116,8 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <?php if($comentario['usuario_id'] == $_SESSION['id']): ?>
                     
     <div class="acoes-comentario">
-        <a href="../comentarios/editar.php?id=<?= $comentario['id'] ?>">Editar</a>
-        <a href="../comentarios/excluir.php?id=<?= $comentario['id'] ?>">Excluir</a>
+        <a href="editar.php?id=<?= $comentario['id'] ?>">Editar</a>
+        <a href="excluir.php?id=<?= $comentario['id'] ?>">Excluir</a>
 
     </div>
     <?php endif; ?>
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     <?php endforeach; ?>
 
-    <a href="../blog/home-comum.php" class="btn-voltar">Voltar</a>
+    <a href="../home-comum.php" class="btn-voltar">Voltar</a>
 
         
     </div>

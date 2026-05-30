@@ -34,10 +34,10 @@ if (isset($_POST['email'], $_POST['senha'], $_POST['tipo'])) {
 
         if (
             $tipo != 'admin' &&
-            $tipo != 'usuário'
+            $tipo != 'usuario'
         ) {
 
-            $erro = "Digite apenas: admin ou usuário";
+            $erro = "Digite apenas: admin ou usuario";
 
         } else {
 
@@ -121,7 +121,7 @@ if (isset($_POST['email'], $_POST['senha'], $_POST['tipo'])) {
         <input
             type="text"
             name="tipo"
-            placeholder="Digite: admin ou usuário"
+            placeholder="Digite: admin ou usuario"
             class="tipo-input"
             required
         >

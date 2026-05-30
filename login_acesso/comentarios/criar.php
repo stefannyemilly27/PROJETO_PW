@@ -9,7 +9,7 @@ if (!isset($_SESSION['email'])){
     exit;
 }
 
-if (isset($_SESSION['tipo']) == 'admin'){
+if ($_SESSION['tipo'] == 'admin'){
 
     header("Location: ../home-adm.php");
     exit;
@@ -115,7 +115,7 @@ if (empty($comentario)){
             <button type="submit" class="btn-comentar">Comentar</button>
         </form>
 
-        <a href="index.php" class="btn-voltar">Voltar</a>
+        <a href="../home-comum.php" class="btn-voltar">Voltar</a>
 
     </div>
 </body>

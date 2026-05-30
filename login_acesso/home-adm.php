@@ -7,14 +7,12 @@ if (!isset($_SESSION['email'])) {
     exit;
 }
 
-if (
-    !isset($_SESSION['tipo']) ||
-    $_SESSION['tipo'] !== 'admin'
-) {
+if($_SESSION['tipo'] != 'admin'){
 
     header("Location: home-comum.php");
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +40,7 @@ if (
     <ul class="menu-admin">
         <li><a href="posts/index.php">Gerenciar Posts</a></li>
         <li><a href="categorias/index.php">Gerenciar Categorias</a></li>
-        <li><a href="comentários/index.php">Gerenciar Comentários</a></li>
+        <li><a href="comentarios/index.php">Gerenciar Comentários</a></li>
     </ul>
 
     <hr>

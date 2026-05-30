@@ -9,11 +9,6 @@ if (!isset($_SESSION['email'])){
     exit;
 }
 
-if ($_SESSION['tipo'] != 'usuario'){
-
-    header("Location: ../home-adm.php");
-    exit;
-}
 
 if (!isset($_GET['id'])){
 

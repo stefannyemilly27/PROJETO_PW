@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../conexao.php';
+require 'conexao.php';
 
 if (!isset($_SESSION['email'])) {
 
@@ -8,14 +8,12 @@ if (!isset($_SESSION['email'])) {
     exit;
 }
 
-if (
-    !isset($_SESSION['tipo']) ||
-    $_SESSION['tipo'] != 'usuário'
-) {
+if($_SESSION['tipo'] != 'usuario'){
 
-    header("Location: ../home-adm.php");
+    header("Location: home-adm.php");
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -41,9 +39,9 @@ if (
     <h2>Área do Usuário</h2>
 
     <ul>
-        <li><a href="post.php">Ver Posts</a></li>
-        <li><a href="index.php">Comentar nos Posts</a></li>
-        <li><a href="categoria.php">Ver posts por categorias</a></li>
+        <li><a href="blog/post.php">Ver Posts</a></li>
+        <li><a href="comentarios/criar.php">Comentar nos Posts</a></li>
+        <li><a href="blog/categoria.php">Ver posts por categorias</a></li>
     </ul>
 
     <hr>
