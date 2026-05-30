@@ -98,6 +98,7 @@ if (empty($titulo) || empty($conteudo)) {
         <button type="submit">Criar Post</button>
 
         </form>
+        <a href="index.php" class="btn-voltar">Voltar</a>
 
     </div>
 </body>

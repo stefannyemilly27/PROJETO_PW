@@ -59,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <button type="submit">Criar Categoria</button>
 
     </form>
+    <a href="index.php" class="btn-voltar">Voltar</a>
 
     </div>
 </body>

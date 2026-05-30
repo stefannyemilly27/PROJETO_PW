@@ -22,7 +22,7 @@ $sql = "
 SELECT comentarios.*, posts.titulo
 FROM comentarios
 INNER JOIN posts
-ON comentarios.posts_id = posts.id
+ON comentarios.post_id = posts.id
 WHERE comentarios.id = ?
 ";
 
