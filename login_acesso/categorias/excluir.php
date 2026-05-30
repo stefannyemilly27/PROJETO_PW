@@ -89,6 +89,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <a href="index.php" class="btn-cancelar">Cancelar</a>
 
     </div>
-
 </body>
 </html>

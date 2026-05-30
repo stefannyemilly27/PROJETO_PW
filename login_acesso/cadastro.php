@@ -104,31 +104,13 @@ if (isset($_POST['email'], $_POST['senha'], $_POST['tipo'])) {
 
     <form method="POST">
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Digite seu E-mail"
-            required
-        >
+        <input type="email" name="email" placeholder="Digite seu E-mail" required>
 
-        <input
-            type="password"
-            name="senha"
-            placeholder="Digite sua senha"
-            required
-        >
+        <input type="password" name="senha" placeholder="Digite sua senha" required>
 
-        <input
-            type="text"
-            name="tipo"
-            placeholder="Digite: admin ou usuario"
-            class="tipo-input"
-            required
-        >
+        <input type="text" name="tipo" placeholder="Digite: admin ou usuario" class="tipo-input" required>
 
-        <button type="submit">
-            Cadastrar
-        </button>
+        <button type="submit">Cadastrar</button>
 
     </form>
 
@@ -136,9 +118,7 @@ if (isset($_POST['email'], $_POST['senha'], $_POST['tipo'])) {
 
         Já possui conta?
 
-        <a href="index.php">
-            Fazer login
-        </a>
+        <a href="index.php">Fazer login</a>
 
     </p>
 

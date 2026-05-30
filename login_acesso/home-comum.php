@@ -21,7 +21,7 @@ if($_SESSION['tipo'] != 'usuario'){
 <head>
 <meta charset="UTF-8">
 <title>Home Usuário</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 

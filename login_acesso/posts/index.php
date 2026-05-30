@@ -78,6 +78,5 @@ $posts = $stmt->fetchAll();
 </a>
 
 </div>
-
 </body>
 </html>
