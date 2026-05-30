@@ -27,8 +27,9 @@ body{
     font-family: 'Cormorant Garamond', serif;
 
     background:
-    linear-gradient(rgba(255,248,240,0.78), rgba(255,248,240,0.82)),
+    linear-gradient(rgba(127, 125, 125, 0.78), rgba(90, 90, 90, 0.82)),
     url("img/anne.png");
+
 
     background-size: cover;
     background-position: center;
