@@ -44,7 +44,7 @@ if (!isset($_SESSION['email'])){
             </div>
 
     <?php endforeach; ?>
-    <a href="categoria.php" class="btn-voltar">Voltar</a>
+    <a href="../home-comum.php" class="btn-voltar">Voltar</a>
 
 <?php else: ?>
 

@@ -1,4 +1,11 @@
 /* =========================================================
+IMPORTAÇÃO DE FONTES
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+
+/* =========================================================
 RESET GERAL
 ========================================================= */
 
@@ -8,12 +15,32 @@ RESET GERAL
     box-sizing: border-box;
 }
 
+
+/* =========================================================
+BODY
+========================================================= */
+
 body{
-    padding: 40px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #ffeaf4, #eaf3ff);
     min-height: 100vh;
+    padding: 40px 20px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    background:
+    linear-gradient(rgba(255,248,240,0.78), rgba(255,248,240,0.82)),
+    url("img/anne.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #5e4636;
 }
+
+
+/* =========================================================
+LINKS E BOTÕES
+========================================================= */
 
 a{
     text-decoration: none;
@@ -22,67 +49,99 @@ a{
 button{
     border: none;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-hr{
-    border: none;
-    height: 1px;
-    background: #ececff;
-    margin: 25px 0;
+    transition: 0.3s;
 }
 
 
 /* =========================================================
-ESTRUTURA PRINCIPAL
+BOX PRINCIPAL
 ========================================================= */
 
 .box,
 .box-comentario{
     width: 90%;
     margin: 40px auto;
-    background: #ffffff;
+
+    background: rgba(255, 245, 232, 0.92);
+
+    border-radius: 28px;
+
     padding: 35px;
-    border-radius: 24px;
-    border: 1px solid #ececff;
-    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
+
+    border: 2px solid #7d2e2e;
+
+    box-shadow:
+    0 0 12px rgba(125,46,46,0.18),
+    0 8px 25px rgba(120,90,60,0.15);
+
+    backdrop-filter: blur(4px);
 }
 
 .box{
-    max-width: 500px;
+    max-width: 520px;
 }
 
 .box-comentario{
-    max-width: 850px;
+    max-width: 900px;
 }
 
 
 /* =========================================================
-TÍTULOS GERAIS
+TÍTULOS
 ========================================================= */
 
 h1,
 .titulo-pagina{
     text-align: center;
-    color: #8f84f5;
+
+    font-family: 'Great Vibes', cursive;
+
+    color: #8b4b2c;
+
+    font-size: 60px;
+
     margin-bottom: 30px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
 }
 
-h1{
-    font-size: 42px;
-}
+h2,
+.titulo-post{
+    color: #8d5b3d;
 
-.titulo-pagina{
-    font-size: 32px;
-}
+    font-size: 34px;
 
-h2{
-    margin: 0;
+    margin-bottom: 14px;
+
+    font-family: 'Cormorant Garamond', serif;
 }
 
 
 /* =========================================================
-FORMULÁRIOS GERAIS
+TEXTOS
+========================================================= */
+
+p,
+.conteudo-post,
+.texto-comentario{
+    font-size: 20px;
+    line-height: 1.8;
+    color: #5f4a3a;
+}
+
+.categoria-post,
+.autor-comentario,
+small{
+    color: #8d715e;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+FORMULÁRIOS
 ========================================================= */
 
 form{
@@ -93,48 +152,194 @@ input,
 textarea,
 select{
     width: 100%;
-    padding: 15px;
-    margin: 12px 0;
-    border-radius: 14px;
-    border: 1px solid #ececff;
-    background: #fafaff;
+
+    padding: 16px;
+
+    margin: 14px 0;
+
+    border-radius: 18px;
+
+    border: 2px solid #7d2e2e;
+
+    background: rgba(255,248,239,0.92);
+
+    font-size: 18px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: #5a4032;
+
     outline: none;
-    font-size: 15px;
-    transition: 0.2s;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 8px rgba(125,46,46,0.10);
 }
 
 input:focus,
 textarea:focus,
 select:focus{
-    border-color: #d8c4ff;
-    box-shadow: 0 0 8px rgba(210,190,255,0.3);
+    box-shadow:
+    0 0 10px rgba(125,46,46,0.25),
+    0 0 18px rgba(125,46,46,0.15);
+
+    border-color: #6b1f1f;
 }
 
 textarea{
     resize: vertical;
+    min-height: 140px;
 }
 
-textarea::placeholder,
-input::placeholder{
-    color: #aaa;
+::placeholder{
+    color: #9e826f;
 }
 
 
 /* =========================================================
-BOTÕES GERAIS
+CARDS
+========================================================= */
+
+.post-card,
+.categorias,
+.comentario-box,
+.post-preview,
+.categoria-preview{
+    background: rgba(255,250,242,0.92);
+
+    border: 1px solid #d9b89c;
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    margin-bottom: 28px;
+
+    box-shadow: 0 4px 15px rgba(120,90,60,0.10);
+
+    transition: 0.3s;
+}
+
+.post-card:hover,
+.categorias:hover,
+.comentario-box:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+    0 8px 22px rgba(120,90,60,0.16);
+}
+
+
+/* =========================================================
+AÇÕES
+========================================================= */
+
+.acoes,
+.acoes-comentario{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+BOTÕES
 ========================================================= */
 
 .btn-link,
 .btn-voltar,
-.btn-cancelar,
 .btn-editar,
 .btn-excluir-link,
 .btn-comentar,
 .btn-excluir,
+.btn-cancelar,
 button[type="submit"]{
+
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+
+    font-family: 'Cormorant Garamond', serif;
+
     font-weight: bold;
-    border-radius: 14px;
-    transition: 0.2s;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+BOTÃO PRINCIPAL
+========================================================= */
+
+.btn-link,
+.btn-comentar,
+button[type="submit"]{
+
+    background: #c97b49;
+
+    color: #fff7f0;
+}
+
+.btn-link:hover,
+.btn-comentar:hover,
+button[type="submit"]:hover{
+
+    background: #b86636;
+
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+BOTÃO EDITAR
+========================================================= */
+
+.btn-editar{
+    background: #d9c7a7;
+    color: #5e4636;
+}
+
+.btn-editar:hover{
+    background: #ccb58f;
+}
+
+
+/* =========================================================
+BOTÃO EXCLUIR
+========================================================= */
+
+.btn-excluir,
+.btn-excluir-link{
+    background: #7d2e2e;
+    color: #fff3ee;
+}
+
+.btn-excluir:hover,
+.btn-excluir-link:hover{
+    background: #692121;
+}
+
+
+/* =========================================================
+BOTÃO VOLTAR
+========================================================= */
+
+.btn-voltar,
+.btn-cancelar{
+    background: #a9b998;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-voltar:hover,
+.btn-cancelar:hover{
+    background: #92a280;
 }
 
 
@@ -144,290 +349,58 @@ MENSAGENS
 
 .erro,
 .sucesso{
-    padding: 14px;
-    border-radius: 14px;
-    margin-bottom: 20px;
+    padding: 16px;
+
+    border-radius: 18px;
+
+    margin-bottom: 22px;
+
     text-align: center;
+
+    font-size: 18px;
+
     font-weight: bold;
 }
 
 .erro{
-    background: #ffe3e6;
-    color: #c45b6d;
+    background: rgba(125,46,46,0.12);
+    border: 2px solid #7d2e2e;
+    color: #7d2e2e;
 }
 
 .sucesso{
-    background: #e3fff2;
-    color: #4e9b7d;
+    background: rgba(138,160,120,0.18);
+    border: 2px solid #8aa078;
+    color: #5a6d4b;
 }
 
 
 /* =========================================================
-CRUD DE CATEGORIAS
+TEXTOS AUXILIARES
 ========================================================= */
 
-.categorias{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 28px;
-    box-shadow: 0 4px 12px rgba(180,180,255,0.08);
-    transition: 0.25s;
-}
-
-.categorias:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
-}
-
-.categorias h2{
-    color: #7f74f0;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.acoes{
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.btn-link{
-    display: inline-block;
-    background: #dfe7ff;
-    color: #555;
-    padding: 14px 22px;
-    margin-bottom: 35px;
-}
-
-.btn-link:hover{
-    background: #d4ccff;
-}
-
-.btn-editar{
-    background: #eef1ff;
-    color: #666;
-    padding: 11px 18px;
-}
-
-.btn-editar:hover{
-    background: #dbe3ff;
-}
-
-.btn-excluir-link{
-    background: #ffe5e5;
-    color: #cc5555;
-    padding: 11px 18px;
-}
-
-.btn-excluir-link:hover{
-    background: #ffd4d4;
-}
-
-.btn-voltar{
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: #eef1ff;
-    color: #666;
-    padding: 14px;
-    margin-top: 20px;
-}
-
-.btn-voltar:hover{
-    background: #dbe3ff;
-}
-
-.sem-categorias{
-    text-align: center;
-    color: #888;
-    font-size: 16px;
-    margin: 20px 0;
-    padding: 15px;
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 14px;
-}
-
-/* =========================================================
-CRUD DE POSTS
-========================================================= */
-
-.post,
-.post-card{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 28px;
-    box-shadow: 0 4px 12px rgba(180,180,255,0.08);
-    transition: 0.25s;
-}
-
-.post:hover,
-.post-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(180,180,255,0.15);
-}
-
-.post h3,
-.post-card h2{
-    color: #7f74f0;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.post p,
-.post-card p{
-    color: #555;
-    line-height: 1.7;
-    font-size: 15px;
-}
-
-small{
-    color: #888;
-    font-size: 14px;
-}
-
-
-/* =========================================================
-CRUD DE EXCLUSÃO
-========================================================= */
-
+.sem-categorias,
+.sem-comentarios,
 .texto-excluir{
     text-align: center;
-    color: #777;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
 
-.post-preview,
-.categoria-preview{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 25px;
-}
+    color: #7d6655;
 
-.post-preview h2,
-.categoria-preview h2{
-    color: #8f84f5;
-    margin-bottom: 15px;
-}
+    font-size: 19px;
 
-.post-preview p{
-    color: #555;
-    line-height: 1.7;
-}
-
-.btn-excluir{
-    width: 100%;
-    padding: 14px;
-    background: #ffd6de;
-    color: #7a4f57;
-}
-
-.btn-excluir:hover{
-    background: #ffc5d1;
-}
-
-.btn-cancelar{
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: #eef1ff;
-    color: #666;
-    padding: 14px;
-}
-
-.btn-cancelar:hover{
-    background: #dbe3ff;
+    margin: 20px 0;
 }
 
 
 /* =========================================================
-CRUD DE COMENTÁRIOS
+LINHA
 ========================================================= */
 
-.titulo-comentarios{
-    color: #8f84f5;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.comentario-box{
-    background: #fafaff;
-    border: 1px solid #ececff;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.autor-comentario{
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.texto-comentario{
-    color: #555;
-    line-height: 1.7;
-    font-size: 15px;
-}
-
-.acoes-comentario{
-    display: flex;
-    gap: 12px;
-    margin-top: 15px;
-    flex-wrap: wrap;
-}
-
-.sem-comentarios{
-    color: #888;
-    margin-bottom: 20px;
-}
-
-.form-comentario{
-    margin-top: 20px;
-}
-
-.form-comentario textarea{
-    min-height: 120px;
-}
-
-.btn-comentar,
-button[type="submit"]{
-    width: 100%;
-    padding: 14px;
-    background: #dfe7ff;
-    color: #555;
-    font-size: 15px;
-}
-
-.btn-comentar:hover,
-button[type="submit"]:hover{
-    background: #d4ccff;
-}
-
-.titulo-post{
-    color: #7f74f0;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.categoria-post{
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.conteudo-post{
-    color: #555;
-    line-height: 1.7;
+hr{
+    border: none;
+    height: 1px;
+    background: #d8c1ac;
+    margin: 30px 0;
 }
 
 
@@ -435,23 +408,32 @@ button[type="submit"]:hover{
 RESPONSIVO
 ========================================================= */
 
-@media (max-width: 768px){
+@media(max-width: 768px){
+
+    body{
+        padding: 20px 12px;
+    }
 
     .box,
     .box-comentario{
+        width: 100%;
         padding: 25px;
     }
 
-    h1{
-        font-size: 32px;
+    h1,
+    .titulo-pagina{
+        font-size: 44px;
     }
 
-    .titulo-pagina,
-    .categorias h2,
-    .post h3,
-    .post-card h2,
+    h2,
     .titulo-post{
-        font-size: 24px;
+        font-size: 28px;
+    }
+
+    p,
+    .conteudo-post,
+    .texto-comentario{
+        font-size: 18px;
     }
 
     .acoes,
@@ -459,10 +441,14 @@ RESPONSIVO
         flex-direction: column;
     }
 
+    .btn-link,
+    .btn-voltar,
     .btn-editar,
-    .btn-excluir-link{
+    .btn-excluir-link,
+    .btn-comentar,
+    .btn-excluir,
+    .btn-cancelar{
         width: 100%;
         text-align: center;
     }
-
 }
