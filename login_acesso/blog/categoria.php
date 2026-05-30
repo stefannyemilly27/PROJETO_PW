@@ -20,7 +20,7 @@ if (!isset($_SESSION['email'])){
 </head>
 <body>
     <div class="box">
-    <?php if (isset($_GET['id'])): ?>
+    <?php if (!isset($_GET['id'])): ?>
 
         <h1>Categorias</h1>
 
@@ -44,24 +44,31 @@ if (!isset($_SESSION['email'])){
             </div>
 
     <?php endforeach; ?>
-    <a href="../home-comum.php" class="btn-voltar">Voltar</a>
+    <a href="categoria.php" class="btn-voltar">Voltar</a>
 
 <?php else: ?>
 
 <?php
-$id = $_GET['id'];
 
-$sql = "
-SELECT posts.*, categorias.nome AS categoria
-FROM posts
-INNER JOIN categorias
-ON posts.categoria_id = categorias.id
-WHERE categoria_id = ?
-";
+$id = $_GET['id'] ?? null;
 
-$stmt = $conexao->prepare($sql);
-$stmt->execute([$id]);
-$posts = $stmt->fetchAll();
+$posts = [];
+
+if ($id) {
+
+    $sql = "
+    SELECT posts.*, categorias.nome AS categoria
+    FROM posts
+    INNER JOIN categorias
+    ON posts.categoria_id = categorias.id
+    WHERE posts.categoria_id = ?
+    ";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute([$id]);
+    $posts = $stmt->fetchAll();
+}
+
 ?>
 
 <h1>Posts da Categoria</h1>
@@ -85,7 +92,7 @@ $posts = $stmt->fetchAll();
     <p class="sem-comentarios">Nenhum post encontrado.</p>
 
 <?php endif; ?>
-    <a href="categoria.php" class="btn-voltar">Voltar</a>
+    <a href="../home-comum.php" class="btn-voltar">Voltar</a>
 <?php endif; ?>
     </div>
 </body>
