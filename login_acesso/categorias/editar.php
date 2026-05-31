@@ -90,7 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <button type="submit">Salvar</button>
 
         </form>
-
+        <a href="index.php" class="btn-voltar">Voltar</a>
+        
     </div>
 </body>
 </html>
