@@ -23,7 +23,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 
     } else {
 
-        $email =trim($_POST['email']);
+        $email = trim($_POST['email']);
         $senha = trim($_POST['senha']);
 
         $stmt = $conexao->prepare(
