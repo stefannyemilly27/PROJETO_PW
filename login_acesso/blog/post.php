@@ -6,7 +6,7 @@ require "../conexao.php";
 if (!isset($_SESSION['email'])){
 
     header("Location: ../index.php");
-    exit;
+    exit;  
 }
 
 $sql = "
@@ -44,7 +44,7 @@ $posts = $stmt->fetchAll();
 
 
                 <div class="acoes">
-                    <a href="comentarios/index.php?id=<?= $post['id'] ?>">Ver Comentários</a>
+                    <a href="../comentarios/index.php?id=<?= $post['id'] ?>">Ver Comentários</a>
                 </div>
 
             </div>
